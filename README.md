@@ -57,8 +57,12 @@ Choose a command run in gateway:
   missing    Displays lines of code missing from coverage
 ```
 
-## CI/CD
+## CI/CD How To 🧙
 
 This tutorial assumes you have access to the [Google Cloud Platform](https://cloud.google.com). While GCP is used for basic infrastructure requirements the lessons learned in this tutorial can be applied to other platforms.
 
-- [Prerequisites](docs/01-prerequisites.md)
+| Section                                                | Description                                   |
+| ------------------------------------------------------ | --------------------------------------------- |
+| [Prerequisites](docs/01-prerequisites.md)              | Preface, disclaimers and setting expectations |
+| [Installing the Client Tools](docs/02-client-tools.md) | Setup and install of CLIs required            |
+| [Creating A Cluster](docs/03-create-gke.md)            | Creating and connecting to a GCP GKE cluster  |
