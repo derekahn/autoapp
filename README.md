@@ -56,3 +56,9 @@ Choose a command run in gateway:
   coverage   Tests code coverage
   missing    Displays lines of code missing from coverage
 ```
+
+## CI/CD
+
+This tutorial assumes you have access to the [Google Cloud Platform](https://cloud.google.com). While GCP is used for basic infrastructure requirements the lessons learned in this tutorial can be applied to other platforms.
+
+- [Prerequisites](docs/01-prerequisites.md)
