@@ -1,0 +1,10 @@
+.git
+.gitignore
+assets
+bin
+build
+docs
+LICENSE
+Makefile
+README.md
+vendor
