@@ -61,8 +61,9 @@ Choose a command run in gateway:
 
 This tutorial assumes you have access to the [Google Cloud Platform](https://cloud.google.com). While GCP is used for basic infrastructure requirements the lessons learned in this tutorial can be applied to other platforms.
 
-| Section                                                | Description                                   |
-| ------------------------------------------------------ | --------------------------------------------- |
-| [Prerequisites](docs/01-prerequisites.md)              | Preface, disclaimers and setting expectations |
-| [Installing the Client Tools](docs/02-client-tools.md) | Setup and install of CLIs required            |
-| [Creating A Cluster](docs/03-create-gke.md)            | Creating and connecting to a GCP GKE cluster  |
+| Section                                                | Description                                                     |
+| ------------------------------------------------------ | --------------------------------------------------------------- |
+| [Prerequisites](docs/00-prerequisites.md)              | Preface, disclaimers and setting expectations                   |
+| [Installing the Client Tools](docs/01-client-tools.md) | Setup and install of CLIs required                              |
+| [Creating A New Cluster](docs/02-create-cluster.md)    | Creating and connecting to a GCP GKE cluster                    |
+| [Deploying Spinnaker](docs/03-deploy-spinnaker.md)     | Deploying [Spinnaker](https://www.spinnaker.io/) to our cluster |
