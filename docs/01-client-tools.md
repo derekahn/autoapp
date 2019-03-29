@@ -8,9 +8,9 @@ This tutorial leverages the [Google Cloud Platform](https://cloud.google.com/) t
 
 > The compute resources required for this tutorial exceed the Google Cloud Platform free tier.
 
-## Google Cloud Platform SDK
+## Install Gcloud
 
-### Install the Google Cloud SDK
+### [Install the Google Cloud SDK](https://cloud.google.com/sdk/)
 
 Follow the Google Cloud SDK [documentation](https://cloud.google.com/sdk/) to install and configure the `gcloud` command line utility.
 
@@ -31,6 +31,8 @@ gcloud init
 ```
 
 Otherwise set a default compute region:
+
+> I pick region `us-west2` just because it's the closest to me, you can pick any region you desire
 
 ```
 gcloud config set compute/region us-west2
@@ -74,7 +76,33 @@ $ sudo mv kubectl /usr/local/bin/
 
 ### Otherwise refer to [this](https://kubernetes.io/docs/tasks/tools/install-kubectl/)!
 
+## Install Helm
 
-| Previous                             | Next                                   |
-| ------------------------------------ | -------------------------------------- |
-| [Prerequisites](01-prerequisites.md) | [Create A New Cluster](03-create-gke.md) |
+Binary downloads of the Helm client can be found on the [Releases page](https://github.com/helm/helm/releases/tag/v2.13.1).
+
+If you want to use a package manager:
+
+- Homebrew users can use
+
+  ```bash
+  $ brew install kubernetes-helm.
+  ```
+
+- [Chocolatey](https://chocolatey.org/) users can use:
+  ```bash
+  $ choco install kubernetes-helm
+  ```
+- [Scoop](https://scoop.sh/) users can use:
+  ```bash
+  $ scoop install helm
+  ```
+- [GoFish](https://gofi.sh/index.html) users can use:
+  ```bash
+  $ gofish install helm
+  ```
+
+## Sections
+
+| Previous                             | Next                                         |
+| ------------------------------------ | -------------------------------------------- |
+| [Prerequisites](00-prerequisites.md) | [Create A New Cluster](02-create-cluster.md) |
