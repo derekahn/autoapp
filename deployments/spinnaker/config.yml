@@ -1,0 +1,29 @@
+---
+gcs:
+  enabled: true
+  bucket: ${BUCKET}
+  project: ${PROJECT}
+  jsonKey: ${SA_JSON}
+
+dockerRegistries:
+  - name: quay
+    address: https://quay.io
+    username: ${QUAY_USER}
+    password: ${QUAY_PASS}
+    email: ${QUAY_EMAIL}
+
+# Disable minio as the default storage backend
+minio:
+  enabled: false
+
+# Configure Spinnaker to enable GCP services
+halyard:
+  spinnakerVersion: 1.10.2
+  image:
+    tag: 1.12.0
+  additionalScripts:
+    create: true
+    data:
+      enable_gcs_artifacts.sh: |-
+        $HAL_COMMAND config artifact gcs account add gcs-${PROJECT} --json-path /opt/gcs/key.json
+        $HAL_COMMAND config artifact gcs enable
