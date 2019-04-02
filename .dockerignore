@@ -3,6 +3,7 @@
 assets
 bin
 build
+deployments
 docs
 LICENSE
 Makefile
