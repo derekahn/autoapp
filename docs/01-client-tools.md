@@ -82,7 +82,7 @@ Binary downloads of the Helm client can be found on the [Releases page](https://
 
 If you want to use a package manager:
 
-- Homebrew users can use
+- [Homebrew](https://brew.sh/) users can use
 
   ```bash
   $ brew install kubernetes-helm.
@@ -100,6 +100,28 @@ If you want to use a package manager:
   ```bash
   $ gofish install helm
   ```
+
+## Install Spin
+
+### 🍎
+
+```bash
+curl -LO https://storage.googleapis.com/spinnaker-artifacts/spin/$(curl -s https://storage.googleapis.com/spinnaker-artifacts/spin/latest)/darwin/amd64/spin
+
+chmod +x spin
+
+sudo mv spin /usr/local/bin/spin
+```
+
+### 🐧
+
+```bash
+curl -LO https://storage.googleapis.com/spinnaker-artifacts/spin/$(curl -s https://storage.googleapis.com/spinnaker-artifacts/spin/latest)/linux/amd64/spin
+
+chmod +x spin
+
+sudo mv spin /usr/local/bin/spin
+```
 
 ## Sections
 
