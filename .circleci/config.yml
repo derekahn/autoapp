@@ -1,12 +1,13 @@
----
-version: 2
+version: 2.1
 jobs:
   build:
-    working_directory: /
+    working_directory: /app
     docker:
       - image: docker:stable-git
     steps:
+      - checkout
+      - setup_remote_docker
       - run:
-          name: Run tests
+          name: Test Build
           command: |
-            docker build -t testBuild .
+            docker build -t test .
