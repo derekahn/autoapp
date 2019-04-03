@@ -15,5 +15,10 @@ bin
 # File of environment variables
 .env
 
+# Spinnaker configs
+spinnaker-config.yaml
+*.json
+
 # go modules vendoring
 vendor
+
