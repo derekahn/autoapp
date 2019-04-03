@@ -2,6 +2,11 @@
 version: 2
 jobs:
   build:
-    machine: true
+    working_directory: /
+    docker:
+      - image: docker:stable-git
     steps:
-      - run: docker build -t company/app:$CIRCLE_BRANCH .
+      - run:
+          name: Run tests
+          command: |
+            docker build -t testBuild .
