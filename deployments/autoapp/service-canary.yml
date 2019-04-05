@@ -1,0 +1,19 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: autoapp-canary
+  name: autoapp-canary
+spec:
+  ports:
+    - name: 80-80
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: autoapp-canary
+    role: frontend
+    env: canary
+  sessionAffinity: None
+  type: LoadBalancer
