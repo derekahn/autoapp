@@ -1,6 +1,10 @@
 # Deploying Spinnaker
 
-Most of this setup and deployment is straight from [GCP's documentation](https://cloud.google.com/solutions/continuous-delivery-spinnaker-kubernetes-engine), with the exception of utilizing GCP's [Container Registry](https://cloud.google.com/container-registry/). But we will use [Google Cloud Storage](https://cloud.google.com/storage/) which is more expensive than [AWS S3](https://aws.amazon.com/s3/) but for the rest of this tutorial we'll just try and stick to GCP as much as possible for convenience.
+Most of this setup and deployment is straight from [GCP's documentation](https://cloud.google.com/solutions/continuous-delivery-spinnaker-kubernetes-engine). But other than using [Google Cloud Storage](https://cloud.google.com/storage/) (which is more expensive than [AWS S3](https://aws.amazon.com/s3/)) we will be divering off of the documentation above ☝.
+
+It is a whole lot easier to use GCP's [Container Registry](https://cloud.google.com/container-registry/) with it's [Cloud Build](https://cloud.google.com/cloud-build/) and [Cloud Source Repositories](https://cloud.google.com/source-repositories/) but for this specific tutorial and learning purposes we'll be using [quay](https://quay.io) for our docker registry and [github](https://github.com) for our designated remote repo.
+
+![Challenge accepted!](../assets/challenge-accepted.jpg)
 
 ## Set up the environment
 
@@ -292,6 +296,7 @@ $ helm install -n cd stable/spinnaker \
 $ export DECK_POD=$(kubectl get pods --namespace default -l "cluster=spin-deck" \
     -o jsonpath="{.items[0].metadata.name}")
 
+# Runs port forwarding in a background process of that session
 $ kubectl port-forward --namespace default $DECK_POD 8080:9000 >> /dev/null &
 ```
 
