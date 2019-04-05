@@ -65,6 +65,8 @@ Choose a command run in gateway:
 
 This tutorial assumes you have access to the [Google Cloud Platform](https://cloud.google.com). While GCP is used for basic infrastructure requirements the lessons learned in this tutorial can be applied to other platforms.
 
+> It's not a requirement. But reading through this tutorial will be easier and available offline utilizing [vmd](https://www.npmjs.com/package/vmd). It requires [node.js](https://nodejs.org/en/) installed which you can do with `$ brew install node` and then `$ npm install -g vmd`. Then in the root of the project `$ cd ~/<WORK_DIR>/autoapp/ && vmd`.
+
 | Section                                                | Description                                                     |
 | ------------------------------------------------------ | --------------------------------------------------------------- |
 | [Prerequisites](docs/00-prerequisites.md)              | Preface, disclaimers and setting expectations                   |
