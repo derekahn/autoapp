@@ -27,7 +27,7 @@ spec:
               port: 8080
           env:
             - name: NAME
-              value: "Manuel 🌊"
+              value: "To Production"
           ports:
             - name: frontend
               containerPort: 8080

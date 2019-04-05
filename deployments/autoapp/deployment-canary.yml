@@ -27,7 +27,7 @@ spec:
               port: 8080
           env:
             - name: NAME
-              value: "Not Production"
+              value: "To Canary"
           ports:
             - name: frontend
               containerPort: 8080
