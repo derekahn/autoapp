@@ -4,21 +4,21 @@
   "id": "2650c7c9-dd0a-4f59-ab0d-9c96a34cd1bc",
   "appConfig": {},
   "keepWaitingPipelines": true,
-  "lastModifiedBy": "derek",
+  "lastModifiedBy": "$QUAY_USER",
   "limitConcurrent": true,
   "parallel": true,
   "expectedArtifacts": [
     {
       "defaultArtifact": {
         "kind": "default.gcs",
-        "name": "gs://cobrakai-kubernetes-manifests/deploy/prod.yaml",
-        "reference": "gs://cobrakai-kubernetes-manifests/deploy/prod.yaml",
+        "name": "gs://$BUCKET/deployment-production.yml",
+        "reference": "gs://$BUCKET/deployment-production.yml",
         "type": "gcs/object"
       },
       "id": "f07830d8-80ac-4d21-a879-35c1f3592698",
       "matchArtifact": {
         "kind": "gcs",
-        "name": "gs://cobrakai-kubernetes-manifests/deploy/prod.yaml",
+        "name": "gs://$BUCKET/deployment-production.yml",
         "type": "gcs/object"
       },
       "useDefaultArtifact": true,
@@ -28,33 +28,15 @@
     {
       "defaultArtifact": {
         "kind": "default.gcs",
-        "name": "gs://cobrakai-kubernetes-manifests/service/prod.yaml",
-        "reference": "gs://cobrakai-kubernetes-manifests/service/prod.yaml",
+        "name": "gs://$BUCKET/service-production.yml",
+        "reference": "gs://$BUCKET/service-production.yml",
         "type": "gcs/object"
       },
       "id": "e169983d-9d3f-42fc-a739-f4f91e9bdc1c",
       "matchArtifact": {
         "kind": "gcs",
-        "name": "gs://cobrakai-kubernetes-manifests/service/prod.yaml",
+        "name": "gs://$BUCKET/service-production.yml",
         "type": "gcs/object"
-      },
-      "useDefaultArtifact": true,
-      "usePriorArtifact": true,
-      "usePriorExecution": false
-    },
-    {
-      "defaultArtifact": {
-        "kind": "default.docker",
-        "name": "gcr.io/cobrakai/autoapp",
-        "reference": "gcr.io/cobrakai/autoapp:v1.0.0",
-        "type": "docker/image",
-        "version": "v1.0.0"
-      },
-      "id": "5d7b090c-a9c3-4130-b94a-966dc33d8a16",
-      "matchArtifact": {
-        "kind": "docker",
-        "name": "gcr.io/cobrakai/autoapp",
-        "type": "docker/image"
       },
       "useDefaultArtifact": true,
       "usePriorArtifact": true,
@@ -64,15 +46,15 @@
       "defaultArtifact": {
         "id": "1821af7d-d1ed-43c0-b8d1-fca97ed761d0",
         "kind": "default.gcs",
-        "name": "gs://cobrakai-kubernetes-manifests/service/canary.yaml",
-        "reference": "gs://cobrakai-kubernetes-manifests/service/canary.yaml",
+        "name": "gs://$BUCKET/service-canary.yml",
+        "reference": "gs://$BUCKET/service-canary.yml",
         "type": "gcs/object"
       },
       "id": "3252c062-dcf0-48cf-a948-569d101f0622",
       "matchArtifact": {
         "id": "7da3f869-69b7-480a-9623-cac2e6c7552c",
         "kind": "gcs",
-        "name": "gs://cobrakai-kubernetes-manifests/service/canary.yaml",
+        "name": "gs://$BUCKET/service-canary.yml",
         "type": "gcs/object"
       },
       "useDefaultArtifact": true,
@@ -82,15 +64,15 @@
       "defaultArtifact": {
         "id": "f34787e7-fd0c-417e-94fd-3b841e0d4448",
         "kind": "default.gcs",
-        "name": "gs://cobrakai-kubernetes-manifests/deploy/canary.yaml",
-        "reference": "gs://cobrakai-kubernetes-manifests/deploy/canary.yaml",
+        "name": "gs://$BUCKET/deployment-canary.yml",
+        "reference": "gs://$BUCKET/deployment-canary.yml",
         "type": "gcs/object"
       },
       "id": "a436ab58-954a-4f3d-99f0-c80f54e09a00",
       "matchArtifact": {
         "id": "37fb12bf-22c7-482f-b606-a176ddaecd85",
         "kind": "gcs",
-        "name": "gs://cobrakai-kubernetes-manifests/deploy/canary.yaml",
+        "name": "gs://$BUCKET/deployment-canary.yml",
         "type": "gcs/object"
       },
       "useDefaultArtifact": true,
@@ -107,7 +89,7 @@
       "completeOtherBranchesThenFail": false,
       "continuePipeline": false,
       "failPipeline": true,
-      "manifestArtifactAccount": "gcs-cobrakai",
+      "manifestArtifactAccount": "gcs-$PROJECT",
       "manifestArtifactId": "f07830d8-80ac-4d21-a879-35c1f3592698",
       "moniker": {
         "app": "autoapp"
@@ -118,7 +100,7 @@
         "loadBalancers": [],
         "securityGroups": []
       },
-      "requiredArtifactIds": ["5d7b090c-a9c3-4130-b94a-966dc33d8a16"],
+      "requiredArtifactIds": [],
       "requisiteStageRefIds": ["3"],
       "source": "artifact",
       "type": "deployManifest"
@@ -126,7 +108,7 @@
     {
       "account": "default",
       "cloudProvider": "kubernetes",
-      "manifestArtifactAccount": "gcs-cobrakai",
+      "manifestArtifactAccount": "gcs-$PROJECT",
       "manifestArtifactId": "e169983d-9d3f-42fc-a739-f4f91e9bdc1c",
       "moniker": {
         "app": "autoapp"
@@ -156,7 +138,7 @@
       "completeOtherBranchesThenFail": false,
       "continuePipeline": false,
       "failPipeline": true,
-      "manifestArtifactAccount": "gcs-cobrakai",
+      "manifestArtifactAccount": "gcs-$PROJECT",
       "manifestArtifactId": "a436ab58-954a-4f3d-99f0-c80f54e09a00",
       "moniker": {
         "app": "autoapp"
@@ -167,7 +149,7 @@
         "loadBalancers": [],
         "securityGroups": []
       },
-      "requiredArtifactIds": ["5d7b090c-a9c3-4130-b94a-966dc33d8a16"],
+      "requiredArtifactIds": [],
       "requisiteStageRefIds": [],
       "source": "artifact",
       "type": "deployManifest"
@@ -175,7 +157,7 @@
     {
       "account": "default",
       "cloudProvider": "kubernetes",
-      "manifestArtifactAccount": "gcs-cobrakai",
+      "manifestArtifactAccount": "gcs-$PROJECT",
       "manifestArtifactId": "3252c062-dcf0-48cf-a948-569d101f0622",
       "moniker": {
         "app": "autoapp"
@@ -191,23 +173,6 @@
       "type": "deployManifest"
     }
   ],
-  "triggers": [
-    {
-      "account": "gcr",
-      "attributeConstraints": {},
-      "enabled": true,
-      "expectedArtifactIds": ["5d7b090c-a9c3-4130-b94a-966dc33d8a16"],
-      "organization": "cobrakai",
-      "payloadConstraints": {
-        "tag": "gcr.io/cobrakai/autoapp:v.*"
-      },
-      "pubsubSystem": "google",
-      "registry": "gcr.io",
-      "repository": "cobrakai/autoapp",
-      "subscriptionName": "gcr-triggers",
-      "tag": "v.*",
-      "type": "pubsub"
-    }
-  ],
+  "triggers": [],
   "updateTs": "1541650310471"
 }
