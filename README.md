@@ -49,7 +49,7 @@ Run `make help` to list available commands:
 ```console
   $  make help
 
-Choose a command run in gateway:
+Choose a command run in autoapp:
 
   install    Install missing dependencies. Builds binary in ./bin
   build      Creates a docker image of the app
