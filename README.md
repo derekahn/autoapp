@@ -63,13 +63,15 @@ Choose a command run in autoapp:
 
 ## CI/CD How To 🧙
 
+
 This tutorial assumes you have access to the [Google Cloud Platform](https://cloud.google.com). While GCP is used for basic infrastructure requirements the lessons learned in this tutorial can be applied to other platforms.
 
 > It's not a requirement. But reading through this tutorial will be easier and available offline utilizing [vmd](https://www.npmjs.com/package/vmd). It requires [node.js](https://nodejs.org/en/) installed which you can do with `$ brew install node` and then `$ npm install -g vmd`. Then in the root of the project `$ cd ~/<WORK_DIR>/autoapp/ && vmd`.
 
-| Section                                                | Description                                                     |
-| ------------------------------------------------------ | --------------------------------------------------------------- |
-| [Prerequisites](docs/00-prerequisites.md)              | Preface, disclaimers and setting expectations                   |
-| [Installing the Client Tools](docs/01-client-tools.md) | Setup and install of CLIs required                              |
-| [Creating A New Cluster](docs/02-create-cluster.md)    | Creating and connecting to a GCP GKE cluster                    |
-| [Deploying Spinnaker](docs/03-deploy-spinnaker.md)     | Deploying [Spinnaker](https://www.spinnaker.io/) to our cluster |
+| Section                                                | Description                                                             |
+| ------------------------------------------------------ | ----------------------------------------------------------------------- |
+| [Prerequisites](docs/00-prerequisites.md)              | Preface, disclaimers and setting expectations                           |
+| [Installing the Client Tools](docs/01-client-tools.md) | Setup and install of CLIs required                                      |
+| [Creating A New Cluster](docs/02-create-cluster.md)    | Creating and connecting to a [GCP](https://cloud.google.com/) [GKE](https://cloud.google.com/kubernetes-engine/) cluster                            |
+| [Deploying Spinnaker](docs/03-deploy-spinnaker.md)     | Deploying [Spinnaker](https://www.spinnaker.io/) to our cluster         |
+| [Setting up Quay](docs/04-setup-quay.md)| Step by step configuration for [Quay](https://quay.io)'s hooks |

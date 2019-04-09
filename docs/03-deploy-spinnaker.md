@@ -297,6 +297,6 @@ $ kubectl port-forward --namespace default $DECK_POD 8080:9000 >> /dev/null &
 
 ## Sections
 
-| Previous                                     | Next |
-| -------------------------------------------- | ---- |
-| [Create A New Cluster](02-create-cluster.md) |      |
+| Previous                                     | Next                                |
+| -------------------------------------------- | ----------------------------------- |
+| [Create A New Cluster](02-create-cluster.md) | [Setting up Quay](04-setup-quay.md) |
