@@ -92,4 +92,4 @@ $ spin pipeline save \
 
 | Previous                            | Next |
 | ----------------------------------- | ---- |
-| [Setting up Quay](04-setup-quay.md) |      |
+| [Setting up Quay](04-setup-quay.md) | [Setting up CI](06-setup-CI.md)      |
