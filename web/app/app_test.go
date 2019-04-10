@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/http/httptest"
+	"os"
 	"path/filepath"
 	"reflect"
 	"runtime"
@@ -48,7 +49,12 @@ func TestAllRoutes(t *testing.T) {
 
 			res := httptest.NewRecorder()
 			s.Router.ServeHTTP(res, req)
-			equals(t, http.StatusOK, res.Code)
+
+			if _, exists := os.LookupEnv("FAILED"); exists {
+				equals(t, http.StatusBadGateway, res.Code)
+			} else {
+				equals(t, http.StatusOK, res.Code)
+			}
 		})
 	}
 }
