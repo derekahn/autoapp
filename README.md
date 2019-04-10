@@ -2,6 +2,7 @@
 
 [![license](https://img.shields.io/github/license/derekahn/autoapp.svg)](https://github.com/derekahn/autoapp/LICENSE)
 [![Go Report Card](https://goreportcard.com/badge/github.com/derekahn/autoapp)](https://goreportcard.com/report/github.com/derekahn/autoapp)
+[![Build Status](https://cloud.drone.io/api/badges/derekahn/autoapp/status.svg)](https://cloud.drone.io/derekahn/autoapp)
 [![Docker Repository on Quay](https://quay.io/repository/derekahn/autoapp/status 'Docker Repository on Quay')](https://quay.io/repository/derekahn/autoapp)
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/derekahn/autoapp.svg)
 
