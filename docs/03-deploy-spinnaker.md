@@ -169,7 +169,7 @@ $ gsutil mb -c regional -l us-central1 gs://$BUCKET
   Creating gs://autoapping-spinnaker-config/...
 ```
 
-### 2. Set and run `deploy/spinnaker/spinnaker-config.yml`
+### 2. Set and run `deploy/spinnaker/spinnaker-config.yaml`
 
 ```bash
 $ export SA_JSON=$(cat spinnaker-sa.json)
@@ -216,7 +216,7 @@ $ env
 ```bash
 # this could take >=5 minutes, so grab a ☕
 $ helm install -n cd stable/spinnaker \
-  -f config.yml \
+  -f config.yaml \
   --timeout 600 \
   --version 1.8.1 --wait
 
