@@ -17,3 +17,6 @@ bin
 
 # go modules vendoring
 vendor
+
+# ignore pipeline.json for spinnaker with credentials
+pipeline.json
