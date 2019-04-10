@@ -77,4 +77,4 @@ This tutorial assumes you have access to the [Google Cloud Platform](https://clo
 | [Deploying Spinnaker](docs/03-deploy-spinnaker.md)     | Deploying [Spinnaker](https://www.spinnaker.io/) to our cluster                                                          |
 | [Setting up Quay](docs/04-setup-quay.md)               | Step by step configuration for [Quay](https://quay.io)'s hooks                                                           |
 | [Setting up Spinnaker](docs/05-setup-spinnaker.md)     | Step by step configuration for spinnaker to automate deployments                                                         |
-| [Setting up CI](06-setup-CI.md)                        | Wire up a simple `CI` pre-merge check                                                                                                |
+| [Setting up CI](docs/06-setup-CI.md)                        | Wire up a simple `CI` pre-merge check                                                                                                |
