@@ -1,5 +1,7 @@
 # Setting Up Quay
 
+We are going to configure quay to pull and trigger a build on any pull requests on any branch with a `v.*` tag; ie `v1.0.1`.
+
 ### 1. Select the `+` icon at the top right
 
 > Select `New Repository`
@@ -34,8 +36,10 @@
 
 ![Configure docker](../assets/quay-docker.png)
 
+#### Nice 👍! [Quay](https://quay.io) is now wired up to our remote [repo](https://github/derekahn/autoapp) and will run on any push to remote or PR with a new tag.
+
 ## Sections
 
-| Previous                                             | Next                                                      |
-| ---------------------------------------------------- | --------------------------------------------------------- |
-| [Deploying Spinnaker to k8s](03-deploy-spinnaker.md) | [Configuring Spinnaker for CD](05-configure-spinnaker.md) |
+| Previous                                             | Next                                          |
+| ---------------------------------------------------- | --------------------------------------------- |
+| [Deploying Spinnaker to k8s](03-deploy-spinnaker.md) | [Setting Up Spinnaker](05-setup-spinnaker.md) |
