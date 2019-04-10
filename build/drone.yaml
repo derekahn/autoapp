@@ -5,8 +5,3 @@ pipeline:
     commands:
       - make test
       - make coverage
-  build:
-    image: plugins/docker
-    tags:
-      - 1
-    autotag: true
