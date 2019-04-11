@@ -50,7 +50,7 @@ func TestAllRoutes(t *testing.T) {
 			res := httptest.NewRecorder()
 			s.Router.ServeHTTP(res, req)
 
-			if _, exists := os.LookupEnv("FAILED"); exists {
+			if str := os.Getenv("FAILED"); str == "true" {
 				equals(t, http.StatusBadGateway, res.Code)
 			} else {
 				equals(t, http.StatusOK, res.Code)

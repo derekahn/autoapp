@@ -42,6 +42,9 @@ PORT=3000
 
 # defaults to "Gopher"
 NAME="Edgar Allan Poe"
+
+# Forces tests to fail
+FAILED=true
 ```
 
 ## Commands
