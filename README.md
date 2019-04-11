@@ -6,7 +6,7 @@
 [![Docker Repository on Quay](https://quay.io/repository/derekahn/autoapp/status 'Docker Repository on Quay')](https://quay.io/repository/derekahn/autoapp)
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/derekahn/autoapp.svg)
 
-An example of CI/CD with a simple go application.
+An example of CI/CD with a simple go application utilizing a multistage docker build.
 
 ## Run
 
@@ -58,6 +58,7 @@ Choose a command run in autoapp:
 
   install    Install missing dependencies. Builds binary in ./bin
   build      Creates a docker image of the app
+  fail       Forces a failed docker build of the app due to failing tests
   run        Runs the current docker image on port 8080
   clean      Clean build files. Runs `go clean` internally
   fmt        Runs gofmt on all source files
@@ -68,7 +69,7 @@ Choose a command run in autoapp:
 
 ## CI/CD How To 🧙
 
-This tutorial assumes you have access to the [Google Cloud Platform](https://cloud.google.com). While GCP is used for basic infrastructure requirements the lessons learned in this tutorial can be applied to other platforms.
+This tutorial assumes you have access to the [Google Cloud Platform](https://cloud.google.com). While GCP is used for basic infrastructure requirements, the lessons learned in this tutorial can be applied to other platforms.
 
 > It's not a requirement. But reading through this tutorial will be easier and available offline utilizing [vmd](https://www.npmjs.com/package/vmd). It requires [node.js](https://nodejs.org/en/) installed which you can do with `$ brew install node` and then `$ npm install -g vmd`. Then in the root of the project `$ cd ~/<WORK_DIR>/autoapp/ && vmd`.
 

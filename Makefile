@@ -29,6 +29,13 @@ build:
 	docker build -t=$(PROJECTNAME) .
 	@echo $(DONE)
 
+## fail: Forces a failed docker build of the app due to failing tests
+.PHONY: fail
+fail:
+	@echo "  $(M)  Failing the 🐳 image...\n"
+	docker build --build-arg FAILED=true -t=$(PROJECTNAME) .
+	@echo $(DONE)
+
 ## run: Runs the current docker image on port 8080
 .PHONY: run
 run:
@@ -39,7 +46,7 @@ run:
 ## clean: Clean build files. Runs `go clean` internally
 .PHONY: clean
 clean:
-	@echo "  $(M)  Cleaning build cache..."
+	@echo "  $(M)  🧹 Cleaning build cache..."
 	go clean ./...
 	rm -rf bin
 	rm -rf cp.out

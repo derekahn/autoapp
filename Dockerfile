@@ -1,8 +1,8 @@
 # First stage: build the executable.
 FROM golang:1.12.1-alpine AS builder
 
-# Uncomment to trigger a failed build due to failing tests
-# ENV FAILED=true
+# force a failing build due to failing tests
+ARG FAILED=false
 
 # Create the user and group files that will be used in the running container to
 # run the process an unprivileged user.
