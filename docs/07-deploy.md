@@ -3,11 +3,9 @@
 This is the final section of our `how to CI/CD`. In this section we will:
 
 0. Branch from `master` and create a `bug-fix` branch, change something (color, html, etc)
-1. Then push said branch to the remote repo
-1. Submit a `pull-request`
-1. Configure github's premerge `CI` hook-which will run our drone service to run the first check.
-1. Upon a successful code review with successful CI checks we will then push appropriate semantic tagging and letting [drone](https://drone.io) run again
-1. Then upon accepting the `pull-request` we will then watch the magic ✨ happen!
+1. Commit changes and then push said branch to the remote repo
+2. Submit a `pull-request`, and upon a successful code review with successful CI checks, we accept the `pull-request`
+3. Pull latest from `master` update tagging and push to remote repo then watch the magic ✨ happen!
 
 ## #0 branch off master
 
@@ -34,13 +32,19 @@ $ git branch
 
 ```bash
 $ vim web/template/welcome.html
-
 ```
 
 > Change some copy; ie. `"Welcome"` -> `"Aloha"`
 
 ```html
+10
 <div class="welcome center">Aloha {{.Name}}, it is {{.Time}}</div>
+```
+
+> Save and quit vim
+
+```vim
+:wq!
 ```
 
 ## #1 commit changes and push to remote repo
@@ -64,9 +68,58 @@ $ git commit -m "Fixed the welcome.html copy to be more hawaiian"
 
   [deploy xxxxxxx] Fixed the welcome.html copy to be more hawaiian
 
-$
+# Push to remote origin
+$ git push -u origin fix-welcome-copy
 
+  Enumerating objects: 11, done.
+  Counting objects: 100% (11/11), done.
+  Delta compression using up to 8 threads
+  Compressing objects: 100% (7/7), done.
+  Writing objects: 100% (7/7), 1.73 KiB | 1.73 MiB/s, done.
+  Total 7 (delta 4), reused 0 (delta 0)
+  remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+  remote:
+  remote: Create a pull request for 'fix-welcome-copy' on GitHub by visiting:
+  remote:      https://github.com/$USER/autoapp/pull/new/fix-welcome-copy
+  remote:
+  To github.com:$USER/autoapp.git
+   * [new branch]      fix-welcome-copy -> fix-welcome-copy
 ```
+
+## #2 Submit a pull-request and merge
+
+## #3 Update master and push new tags
+
+```bash
+# Switch branches back to master
+$ git checkout master
+
+# Check that we're on master
+$ git branch
+
+  * master
+  (END)
+
+# Create a new tag
+$ git tag 0.1.0
+
+# push tags
+$ gp --tags
+
+  Total 0 (delta 0), reused 0 (delta 0)
+  To github.com:$USER/autoapp.git
+   * [new tag]         v0.1.0 -> v0.1.0
+```
+
+## Now sit back relax and watch the magic ✨
+
+#### [Quay](https://quay.io)
+
+You can check to see the hook fired (replace $USER with yours): https://quay.io/repository/$USER/autoapp?tab=tags
+
+![checking on quay](../assets/deploy-quay.png)
+
+#### [Spinnaker](https://localhost:8080)
 
 ```bash
 # Double check that spinnaker is exposed
@@ -82,6 +135,40 @@ $ export DECK_POD=$(kubectl get pods --namespace default \
 # re-expose port and run in background process in this session
 $ kubectl port-forward --namespace default $DECK_POD 8080:9000 >> /dev/null &
 ```
+
+[Check pipline](http://localhost:8080/#/applications/autoapp/executions)
+
+![Pipeline running](../assets/deploy-running.png)
+
+[Check Load Balancers](http://localhost:8080/#/applications/autoapp/loadBalancers)
+
+![Navigate to loadBalancers](../assets/deploy-loadbalancers.png)
+
+[Check canary](http://localhost:8080/#/applications/autoapp/loadBalancers/loadBalancerDetails/kubernetes/default/default/service%20autoapp-canary)
+
+![Check canary deployment](../assets/deploy-canary.png)
+
+[Go back to pipline](http://localhost:8080/#/applications/autoapp/executions)
+
+> Click continue
+
+![If all is 👍; SEND IT!](../assets/deploy-decision.png)
+
+> 👀 Watch it run 🏃
+
+![Deploying](../assets/deploy-processing.png)
+
+> Watch it complete 🏁
+
+![Completed!](../assets/deploy-ed.png)
+
+[Go back to Load Balancers](http://localhost:8080/#/applications/autoapp/loadBalancers)
+
+> Check the recently deployed production
+
+![Deployed!](../assets/deploy-check-production.png)
+
+### 🥳Au Pau🏁 !
 
 ## Sections
 
