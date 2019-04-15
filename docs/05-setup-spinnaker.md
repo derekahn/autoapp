@@ -85,11 +85,10 @@ $ spin pipeline save \
 
 ![Spinnaker autoapp dashboard](../assets/spinnaker-pipeline.png)
 
-
 #### Woohoo 🎉! Our Spinnaker is now wired up to our `quay.io/$QUAY_USER/autoapp` repository and will trigger a deployment on any new tags such as `v1.0.0`
 
 ## Sections
 
-| Previous                            | Next |
-| ----------------------------------- | ---- |
-| [Setting up Quay](04-setup-quay.md) | [Setting up CI](06-setup-CI.md)      |
+| Previous                            | Next                                  |
+| ----------------------------------- | ------------------------------------- |
+| [Setting up Quay](04-setup-quay.md) | [Setting up Drone](06-setup-drone.md) |
