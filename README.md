@@ -82,3 +82,4 @@ This tutorial assumes you have access to the [Google Cloud Platform](https://clo
 | [Setting up Quay](docs/04-setup-quay.md)               | Step by step configuration for [Quay](https://quay.io)'s hooks                                                           |
 | [Setting up Spinnaker](docs/05-setup-spinnaker.md)     | Step by step configuration for spinnaker to automate deployments                                                         |
 | [Setting up Drone](docs/06-setup-drone.md)             | Wire up a simple `CI` pre-merge check                                                                                    |
+| [Deploying 🚀](docs/07-deploy.md)                      | Submitting a pull-request which on successful merge will trigger our `CI/CD`                                             |
