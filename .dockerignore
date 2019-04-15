@@ -1,5 +1,6 @@
 .git
 .gitignore
+*.out
 assets
 bin
 build
