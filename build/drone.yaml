@@ -5,3 +5,8 @@ pipeline:
     commands:
       - make test
       - make coverage
+
+  build:
+    image: plugins/docker
+    repo: derekahn/autoapp
+    dry_run: true
