@@ -37,8 +37,7 @@ $ vim web/template/welcome.html
 > Change some copy; ie. `"Welcome"` -> `"Aloha"`
 
 ```html
-10
-<div class="welcome center">Aloha {{.Name}}, it is {{.Time}}</div>
+10    <div class="welcome center">Aloha {{.Name}}, it is {{.Time}}</div>
 ```
 
 > Save and quit vim
@@ -88,6 +87,18 @@ $ git push -u origin fix-welcome-copy
 
 ## #2 Submit a pull-request and merge
 
+> Create a new `pull-request`
+
+![Create a pull-request](../assets/deploy-pull-request.png)
+
+> Write a descriptive summary/report of changes
+
+![Write a descriptive summary](../assets/deploy-pr-desc.png)
+
+> CI (drone) checks are successful
+
+![CI Success](../assets/deploy-CI-success.png)
+
 ## #3 Update master and push new tags
 
 ```bash
@@ -99,6 +110,19 @@ $ git branch
 
   * master
   (END)
+
+# Pull recently merged PR
+$ git pull
+
+  remote: Enumerating objects: 1, done.
+  remote: Counting objects: 100% (1/1), done.
+  remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+  Unpacking objects: 100% (1/1), done.
+  From github.com:$USER/autoapp
+     e7535e9..b0a2d41  master     -> origin/master
+  Updating e7535e9..b0a2d41
+  Fast-forward
+    web/template/welcome.html          |   1 +
 
 # Create a new tag
 $ git tag 0.1.0
@@ -168,7 +192,7 @@ $ kubectl port-forward --namespace default $DECK_POD 8080:9000 >> /dev/null &
 
 ![Deployed!](../assets/deploy-check-production.png)
 
-### 🥳Au Pau🏁 !
+### 🥳Au Pau🏁  Congratulations if you made it this far and it worked 👏. Please feel free to submit `pull-requests` forany improvements 🍻.
 
 ## Sections
 
