@@ -9,7 +9,12 @@ steps:
       - make test
       - make coverage
 
-  build:
+  - name: coverage
+    image: plugins/codacy
+    settings:
+      token:
+        from_secret: codacy_token
+
   - name: build
     image: plugins/docker
     repo: derekahn/autoapp
