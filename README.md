@@ -2,6 +2,8 @@
 
 [![license](https://img.shields.io/github/license/derekahn/autoapp.svg)](https://github.com/derekahn/autoapp/LICENSE)
 [![Go Report Card](https://goreportcard.com/badge/github.com/derekahn/autoapp)](https://goreportcard.com/report/github.com/derekahn/autoapp)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a3b36a7aab4d43088d45f213ecb1a423)](https://www.codacy.com/app/git.derek/autoapp?utm_source=github.com&utm_medium=referral&utm_content=derekahn/autoapp&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/a3b36a7aab4d43088d45f213ecb1a423)](https://www.codacy.com/app/git.derek/autoapp?utm_source=github.com&utm_medium=referral&utm_content=derekahn/autoapp&utm_campaign=Badge_Coverage)
 [![Build Status](https://cloud.drone.io/api/badges/derekahn/autoapp/status.svg)](https://cloud.drone.io/derekahn/autoapp)
 [![Docker Repository on Quay](https://quay.io/repository/derekahn/autoapp/status 'Docker Repository on Quay')](https://quay.io/repository/derekahn/autoapp)
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/derekahn/autoapp.svg)
