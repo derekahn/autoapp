@@ -1,12 +1,16 @@
 ---
-pipeline:
-  test:
+kind: pipeline
+name: default
+
+steps:
+  - name: test
     image: golang
     commands:
       - make test
       - make coverage
 
   build:
+  - name: build
     image: plugins/docker
     repo: derekahn/autoapp
     dry_run: true
