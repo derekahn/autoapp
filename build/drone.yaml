@@ -1,21 +1,18 @@
 ---
-kind: pipeline
-name: default
-
-steps:
-  - name: test
+pipeline:
+  test:
     image: golang
     commands:
       - make test
       - make coverage
 
-  - name: coverage
+  coverage:
     image: plugins/codacy
     settings:
       token:
         from_secret: codacy_token
 
-  - name: build
+  build:
     image: plugins/docker
     repo: derekahn/autoapp
     dry_run: true
