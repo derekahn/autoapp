@@ -10,7 +10,7 @@ import (
 )
 
 const defaultPort = "8080"
-const defaultName = "Gopher 🐹"
+const defaultName = "Gopher"
 
 func main() {
 	name, exists := os.LookupEnv("NAME")
