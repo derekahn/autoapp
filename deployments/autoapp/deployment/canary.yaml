@@ -25,6 +25,9 @@ spec:
             httpGet:
               path: /health
               port: 8080
+          env:
+            - name: NAME
+              value: "CANARY"
           ports:
             - name: frontend
               containerPort: 8080
