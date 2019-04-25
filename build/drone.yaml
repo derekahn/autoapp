@@ -13,7 +13,7 @@ steps:
     image: plugins/codacy
     settings:
       token:
-        from_secret: CODACY_TOKEN
+        from_secret: codacy_token
 
   - name: build
     image: plugins/docker
